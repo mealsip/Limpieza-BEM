@@ -39,7 +39,6 @@ whitespace=function(based,variables){
   return(based)
 }
 
-
 #Nombre del cultivo Cosechado
 
 CultivoCosecha=function(based){
@@ -82,55 +81,58 @@ producto=function(based){
 
     if (!is.na(based$Nombre.del.cultivo.cosechado[i])){
       if (based$Nombre.del.cultivo.cosechado[i]%in%c("MAIZ","TRIGO","SORGO")){
-        if (length(grep("SEMILLA|FRUTO",based$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]))){
-          based$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]="GRANO"
+        if (length(grep("SEMILLA|FRUTO",based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]))){
+          based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]="GRANO"
         }
-        else if (length(grep("EJOTE",based$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]))){
-          based$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]=NA
+        else if (length(grep("EJOTE",based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]))){
+          based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]=NA
         }
       }
       else if (based$Nombre.del.cultivo.cosechado[i]=="FRIJOL"){
-        if (length(grep("SEMILLA|FRUTO|EJOTE",based$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]))){
-          based$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]="GRANO"
+        if (length(grep("SEMILLA|FRUTO|EJOTE",based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]))){
+          based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]="GRANO"
         }
       }
     }     
 
-    if (length(grep("GRANO",based$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]))){
-      based$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]="GRANO"
+    if (length(grep("GRANO",based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]))){
+      based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]="GRANO"
     }
-    else if (length(grep("ELOTE|MAZORCA",based$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]))){
-      based$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]="ELOTE"
+    else if (length(grep("ELOTE",based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]))){
+      based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]="ELOTE"
     }
-    else if (length(grep("SEMILLA",based$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]))){
-      based$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]="SEMILLA"
+    else if (length(grep("SEMILLA",based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]))){
+      based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]="SEMILLA"
     }
-    else if (length(grep("HOJA",based$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]))){
-      based$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]="HOJA DE LA MAZORCA"
+    else if (length(grep("HOJA",based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]))){
+      based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]="HOJA DE LA MAZORCA"
     }
-    else if (length(grep("FORRAJE EN VERDE",based$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]))){
-      based$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]="FORRAJE EN VERDE"
+    else if (length(grep("MAZORCA",based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]))){
+      based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]="ELOTE"
     }
-    else if (length(grep("FORRAJE|PAJA|PACA|RESIDUOS DE COSECHA|PASTURA|PASTO|HENIFICADO|ENEIFICADO|ENSILAJE|ENSILADO|SE DEJO EN PIE PARA GANADO|ZACATE MOLIDO|RASTROJO|RESIDUOS|COBERTURA",based$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]))){
-      based$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]="FORRAJE SECO"
+    else if (length(grep("FORRAJE EN VERDE",based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]))){
+      based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]="FORRAJE EN VERDE"
     }
-    else if (length(grep("SECO",based$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]))){
-      based$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]="FORRAJE SECO"
+    else if (length(grep("FORRAJE|PAJA|PACA|RESIDUOS DE COSECHA|PASTURA|PASTO|HENIFICADO|ENEIFICADO|ENSILAJE|ENSILADO|SE DEJO EN PIE PARA GANADO|ZACATE MOLIDO|RASTROJO|RESIDUOS|COBERTURA",based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]))){
+      based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]="FORRAJE SECO"
     }
-    else if (length(grep("MAIZ|SILO",based$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]))){
-      based$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]="GRANO"
+    else if (length(grep("SECO",based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]))){
+      based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]="FORRAJE SECO"
     }
-    else if (length(grep("FRUTO|TUBERCULO|VAINAS VERDES|NARANJA|EJOTE|AGUACATE|ACEITUNA|CACAHUATE|CANA|CALABAZA|MANZANA|MELON|NOGAL|NUEZ|PINA|HABA",based$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]))){
-      based$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]="FRUTO"
+    else if (length(grep("MAIZ|SILO",based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]))){
+      based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]="GRANO"
     }
-    else if (length(grep("FLOR|CALICES",based$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]))){
-      based$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]="FLOR"
+    else if (length(grep("FRUTO|TUBERCULO|VAINAS VERDES|NARANJA|EJOTE|AGUACATE|ACEITUNA|CACAHUATE|CANA|CALABAZA|MANZANA|MELON|NOGAL|NUEZ|PINA|HABA",based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]))){
+      based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]="OTRO (ESPECIFIQUE)"
     }
-    else if (length(grep("PLANTULA",based$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]))){
-      based$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]="PLANTULA"
+    else if (length(grep("FLOR|CALICES",based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]))){
+      based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]="FLOR"
     }
-    else if (length(grep("NINGUNO|SINIESTRADO|PERDIDA|NO HUBO|NO HYA|NO HAy|NO SE COSECHO|NADA|NO SE TUVO|NO SE OBTUVO|OTRO|SEGURO AGRICOLA|MANOJO|PLANTA COMPLETA|BIOMASA|DESARROLLO DE LA PLANTA|EN PIE|PAS 540|RICINUS|ABONO VERDE|HUITLACOCHE",based$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]))){
-      based$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]=NA
+    else if (length(grep("PLANTULA",based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]))){
+      based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]="PLANTULA"
+    }
+    else if (length(grep("NINGUNO|SINIESTRADO|PERDIDA|NO HUBO|NO HYA|NO HAy|NO SE COSECHO|NADA|NO SE TUVO|NO SE OBTUVO|SEGURO AGRICOLA|MANOJO|PLANTA COMPLETA|BIOMASA|DESARROLLO DE LA PLANTA|EN PIE|PAS 540|RICINUS|ABONO VERDE|HUITLACOCHE",based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]))){
+      based$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]=NA
     }
   }
   return(based)
@@ -150,51 +152,51 @@ borra=function(x,based){
 umedida=function(based){
   for (i in 1:dim(based)[1]) {
     
-    if (length(grep("TON",based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]))){
-      based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]="TONELADA/HA"
+    if (length(grep("TON",based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]))){
+      based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]="TONELADA/HA"
     }
-    else if (length(grep("PACA",based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]))){
-      based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]="PACA/HA"
+    else if (length(grep("PACA",based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]))){
+      based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]="PACA/HA"
     }
-    else if (length(grep("COSTAL",based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]))){
-      based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]="COSTAL/HA"
+    else if (length(grep("COSTAL",based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]))){
+      based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]="COSTAL/HA"
     }
-    else if (length(grep("BULTO",based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]))){
-      based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]="COSTAL/HA"
+    else if (length(grep("BULTO",based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]))){
+      based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]="COSTAL/HA"
     }
-    else if (length(grep("BOLSA",based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]))){
-      based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]="BOLSA/HA"
+    else if (length(grep("BOLSA",based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]))){
+      based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]="BOLSA/HA"
     }
-    else if (length(grep("MANOJO",based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]))){
-      based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]="MANOJO"
+    else if (length(grep("MANOJO",based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]))){
+      based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]="MANOJO"
     }
-    else if (length(grep("ROLLO",based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]))){
-      based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]="ROLLO"
+    else if (length(grep("ROLLO",based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]))){
+      based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]="ROLLO"
     }
-    else if (length(grep("KILO|KG",based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]))){
-      based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]="KILOGRAMO/HA"
+    else if (length(grep("KILO|KG",based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]))){
+      based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]="KILOGRAMO/HA"
     }
-    else if (length(grep("CAMION|VIAJE|TRAILA|REMOLQUE|CARRO",based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]))){
-      based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]="VIAJE"
+    else if (length(grep("CAMION|VIAJE|TRAILA|REMOLQUE|CARRO",based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]))){
+      based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]="VIAJE"
     }
-    else if (length(grep("RASTROJO|COBERTURA",based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]))){
-      based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]="RASTROJO"
+    else if (length(grep("RASTROJO|COBERTURA",based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]))){
+      based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]="RASTROJO"
     }
-    else if (length(grep("GAVILLA",based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]))){
-      based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]="GAVILLA"
+    else if (length(grep("GAVILLA",based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]))){
+      based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]="GAVILLA"
     }
-    else if (length(grep("CARGA",based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]))){
-      based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]="CARGA"
+    else if (length(grep("CARGA",based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]))){
+      based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]="CARGA"
     }
-    else if (length(grep("MOGOTE",based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]))){
-      based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]="MOGOTE"
+    else if (length(grep("MOGOTE",based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]))){
+      based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]="MOGOTE"
     }
-    else if (length(grep("PIEZA",based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]))){
-      based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]="PIEZA/HA"
+    else if (length(grep("PIEZA",based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]))){
+      based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]="PIEZA/HA"
     }
     
     else {
-      based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]=NA
+      based$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]=NA
     }
   }
   return(based)
@@ -215,15 +217,15 @@ lleva_NA=function(tabla,variable1,variable2,valor1,valor2){
 
 rendimiento=read.csv(file='24_rendimiento.csv',header=TRUE)
 
-rendimiento=rendimiento[,c("ID.de.la.bit醕ora..clave.for醤ea.","ID.de.tipo.de.bit醕ora..clave.for醤ea.","Tipo.de.parcela..testigo.o.innovaci髇.",
-"Nombre.del.cultivo.cosechado","Nombre.del.producto.de.inter閟.econ髆ico.obtenido","Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido","Rendimiento.real..unidad.ha.",
-"Uso.que.le.da.al.producto.de.inter閟.econ髆ico.obtenido","Precio.de.venta.del.producto.de.inter閟.econ髆ico.obtenido")]
+rendimiento=rendimiento[,c("ID.de.la.bit谩cora..clave.for谩nea.","ID.de.tipo.de.bit谩cora..clave.for谩nea.","Tipo.de.parcela..testigo.o.innovaci贸n.",
+"Nombre.del.cultivo.cosechado","Nombre.del.producto.de.inter茅s.econ贸mico.obtenido","Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido","Rendimiento.real..unidad.ha.",
+"Uso.que.le.da.al.producto.de.inter茅s.econ贸mico.obtenido","Precio.de.venta.del.producto.de.inter茅s.econ贸mico.obtenido")]
 
 
 #Variables tipo Caracter
 
-CharVar=c("Tipo.de.parcela..testigo.o.innovaci髇.","Nombre.del.cultivo.cosechado","Nombre.del.producto.de.inter閟.econ髆ico.obtenido","Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido",
-          "Uso.que.le.da.al.producto.de.inter閟.econ髆ico.obtenido")
+CharVar=c("Tipo.de.parcela..testigo.o.innovaci贸n.","Nombre.del.cultivo.cosechado","Nombre.del.producto.de.inter茅s.econ贸mico.obtenido","Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido",
+          "Uso.que.le.da.al.producto.de.inter茅s.econ贸mico.obtenido")
 
 
 #Limpieza variables tipo caracter
@@ -242,7 +244,7 @@ rendimiento=CultivoCosecha(rendimiento)
 
 rendimiento=producto(rendimiento)
 
-rendimiento=mutate(rendimiento,Nombre.del.producto.de.inter閟.econ髆ico.obtenido=ifelse(Nombre.del.producto.de.inter閟.econ髆ico.obtenido=="",NA,Nombre.del.producto.de.inter閟.econ髆ico.obtenido))
+rendimiento=mutate(rendimiento,Nombre.del.producto.de.inter茅s.econ贸mico.obtenido=ifelse(Nombre.del.producto.de.inter茅s.econ贸mico.obtenido=="",NA,Nombre.del.producto.de.inter茅s.econ贸mico.obtenido))
 
 
 #Estandariza valores de unidad de medida
@@ -259,15 +261,14 @@ rendimiento=unique(rendimiento)
 
 # Genera variables indicadoras para aquellos con mas de un cultivo, producto, unidad, uso
 
-rendimiento=mutate(rendimiento,Dummy_bitacora=paste(str_pad(as.character(ID.de.la.bit醕ora..clave.for醤ea.),7,pad="0"),str_pad(as.character(ID.de.tipo.de.bit醕ora..clave.for醤ea.),7,pad="0"),sep=""))
+rendimiento=mutate(rendimiento,Dummy_bitacora=paste(str_pad(as.character(ID.de.la.bit谩cora..clave.for谩nea.),7,pad="0"),str_pad(as.character(ID.de.tipo.de.bit谩cora..clave.for谩nea.),7,pad="0"),sep=""))
 
 duplicados0=subset(rendimiento,duplicated(Dummy_bitacora))
 
 duplicados=subset(rendimiento,Dummy_bitacora%in%duplicados0$Dummy_bitacora)
 
-index0=order(duplicados$Dummy_bitacora,duplicados$Nombre.del.cultivo.cosechado,duplicados$Nombre.del.producto.de.inter閟.econ髆ico.obtenido,duplicados$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido,duplicados$Uso.que.le.da.al.producto.de.inter閟.econ髆ico.obtenido,method = "radix")
+index0=order(duplicados$Dummy_bitacora,duplicados$Nombre.del.cultivo.cosechado,duplicados$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido,duplicados$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido,duplicados$Uso.que.le.da.al.producto.de.inter茅s.econ贸mico.obtenido,method = "radix")
 duplicados=duplicados[index0,]
-
 
 ICPUU=function(basedt){
   n=dim(basedt)[1]
@@ -286,35 +287,35 @@ ICPUU=function(basedt){
     if (dbitac!=basedt$Dummy_bitacora[i]){
       dbitac=basedt$Dummy_bitacora[i]
       if (!is.na(basedt$Nombre.del.cultivo.cosechado[i])) ctvo=basedt$Nombre.del.cultivo.cosechado[i]
-      if (!is.na(basedt$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i])) prodcto=basedt$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]
-      if (!is.na(basedt$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i])) unidad=basedt$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]
-      if (!is.na(basedt$Uso.que.le.da.al.producto.de.inter閟.econ髆ico.obtenido[i])) usoecon=basedt$Uso.que.le.da.al.producto.de.inter閟.econ髆ico.obtenido[i]
+      if (!is.na(basedt$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i])) prodcto=basedt$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]
+      if (!is.na(basedt$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i])) unidad=basedt$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]
+      if (!is.na(basedt$Uso.que.le.da.al.producto.de.inter茅s.econ贸mico.obtenido[i])) usoecon=basedt$Uso.que.le.da.al.producto.de.inter茅s.econ贸mico.obtenido[i]
     }
     else {
       if (is.na(basedt$Nombre.del.cultivo.cosechado[i]) | ctvo!=basedt$Nombre.del.cultivo.cosechado[i]){
         ind_cultivo[i]=1
         if (!is.na(basedt$Nombre.del.cultivo.cosechado[i])) ctvo=basedt$Nombre.del.cultivo.cosechado[i] else ctvo=""
-        if (!is.na(basedt$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i])) prodcto=basedt$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i] else prodcto=""
-        if (!is.na(basedt$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i])) unidad=basedt$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i] else unidad=""
-        if (!is.na(basedt$Uso.que.le.da.al.producto.de.inter閟.econ髆ico.obtenido[i])) usoecon=basedt$Uso.que.le.da.al.producto.de.inter閟.econ髆ico.obtenido[i] else usoecon=""
+        if (!is.na(basedt$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i])) prodcto=basedt$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i] else prodcto=""
+        if (!is.na(basedt$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i])) unidad=basedt$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i] else unidad=""
+        if (!is.na(basedt$Uso.que.le.da.al.producto.de.inter茅s.econ贸mico.obtenido[i])) usoecon=basedt$Uso.que.le.da.al.producto.de.inter茅s.econ贸mico.obtenido[i] else usoecon=""
       }
       else {
-        if (is.na(basedt$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]) | prodcto!=basedt$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]){
+        if (is.na(basedt$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]) | prodcto!=basedt$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]){
           ind_producto[i]=1
-          if (!is.na(basedt$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i])) prodcto=basedt$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i] else prodcto=""
-          if (!is.na(basedt$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i])) unidad=basedt$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i] else unidad=""
-          if (!is.na(basedt$Uso.que.le.da.al.producto.de.inter閟.econ髆ico.obtenido[i])) usoecon=basedt$Uso.que.le.da.al.producto.de.inter閟.econ髆ico.obtenido[i] else usoecon=""
+          if (!is.na(basedt$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i])) prodcto=basedt$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i] else prodcto=""
+          if (!is.na(basedt$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i])) unidad=basedt$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i] else unidad=""
+          if (!is.na(basedt$Uso.que.le.da.al.producto.de.inter茅s.econ贸mico.obtenido[i])) usoecon=basedt$Uso.que.le.da.al.producto.de.inter茅s.econ贸mico.obtenido[i] else usoecon=""
         }
         else {
-          if (is.na(basedt$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]) | unidad!=basedt$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]){
+          if (is.na(basedt$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]) | unidad!=basedt$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]){
             ind_unidad[i]=1
-            if (!is.na(basedt$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i])) unidad=basedt$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i] else unidad=""
-            if (!is.na(basedt$Uso.que.le.da.al.producto.de.inter閟.econ髆ico.obtenido[i])) usoecon=basedt$Uso.que.le.da.al.producto.de.inter閟.econ髆ico.obtenido[i] else usoecon=""
+            if (!is.na(basedt$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i])) unidad=basedt$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i] else unidad=""
+            if (!is.na(basedt$Uso.que.le.da.al.producto.de.inter茅s.econ贸mico.obtenido[i])) usoecon=basedt$Uso.que.le.da.al.producto.de.inter茅s.econ贸mico.obtenido[i] else usoecon=""
           }
           else{
-            if (is.na(basedt$Uso.que.le.da.al.producto.de.inter閟.econ髆ico.obtenido[i]) | usoecon!=basedt$Uso.que.le.da.al.producto.de.inter閟.econ髆ico.obtenido[i]){
+            if (is.na(basedt$Uso.que.le.da.al.producto.de.inter茅s.econ贸mico.obtenido[i]) | usoecon!=basedt$Uso.que.le.da.al.producto.de.inter茅s.econ贸mico.obtenido[i]){
               ind_uso[i]=1
-              if (!is.na(basedt$Uso.que.le.da.al.producto.de.inter閟.econ髆ico.obtenido[i])) usoecon=basedt$Uso.que.le.da.al.producto.de.inter閟.econ髆ico.obtenido[i] else usoecon=""
+              if (!is.na(basedt$Uso.que.le.da.al.producto.de.inter茅s.econ贸mico.obtenido[i])) usoecon=basedt$Uso.que.le.da.al.producto.de.inter茅s.econ贸mico.obtenido[i] else usoecon=""
             }
           }
         }
@@ -337,27 +338,54 @@ temp=summarise(temp.grouped,ind_cultivo=sum(ind_cultivo),ind_producto=sum(ind_pr
 
 rendimiento=merge.data.frame(rendimiento,temp,by="Dummy_bitacora",all.x=TRUE)
 
+rendimiento=mutate(rendimiento,ind_cultivo=ifelse(is.na(ind_cultivo),0,ind_cultivo),ind_producto=ifelse(is.na(ind_producto),0,ind_producto),ind_unidad=ifelse(is.na(ind_unidad),0,ind_unidad),ind_uso=ifelse(is.na(ind_uso),0,ind_uso))
 
-#Agrega informaci髇 de bitacora
+
+#Agrega informaci贸n de bitacora
 
 
-bitacora=read.csv(file='01_caracteristicas_Bit醕ora.csv',header=TRUE)
+bitacora=read.csv(file='01_caracteristicas_Bit谩cora.csv',header=TRUE)
 
-bitacora=bitacora[,c("ID.de.la.bit醕ora..clave.primaria.","A駉","Ciclo.agron髆ico","Tipo.de.producci髇","ID.de.la.parcela..clave.for醤ea.")]
+bitacora=bitacora[,c("ID.de.la.bit谩cora..clave.primaria.","A帽o","Ciclo.agron贸mico","Tipo.de.producci贸n","ID.de.la.parcela..clave.for谩nea.")]
 
-bitacora=subset(bitacora,!duplicated(ID.de.la.bit醕ora..clave.primaria.))
+bitacora=subset(bitacora,!duplicated(ID.de.la.bit谩cora..clave.primaria.))
 
-rendimiento=merge.data.frame(rendimiento,bitacora,by.x ="ID.de.la.bit醕ora..clave.for醤ea.",by.y="ID.de.la.bit醕ora..clave.primaria.",all.x=TRUE) 
+CharVarbit=c("Ciclo.agron贸mico","Tipo.de.producci贸n")
+
+bitacora=mayus(bitacora,CharVarbit)
+
+bitacora=sinacento(bitacora,CharVarbit)
+
+bitacora=whitespace(bitacora,CharVarbit)
+
+rendimiento=merge.data.frame(rendimiento,bitacora,by.x ="ID.de.la.bit谩cora..clave.for谩nea.",by.y="ID.de.la.bit谩cora..clave.primaria.",all.x=TRUE) 
+
+#Agrega informaci贸n de parcelas
+
+parcela=read.csv(file='04_parcela.csv',header=TRUE)
+
+parcela=parcela[,c("ID.de.la.parcela..clave.primaria.","Superficie..ha.","Estado","Municipio","Localidad","Nombre.del.Hub","Latitud.N","Longitud.W")]
+
+parcela=subset(parcela,!duplicated(ID.de.la.parcela..clave.primaria.))
+
+CharVarPar=c("Estado","Municipio","Localidad","Nombre.del.Hub")
+
+parcela=mayus(parcela,CharVarPar)
+
+parcela=sinacento(parcela,CharVarPar)
+
+parcela=whitespace(parcela,CharVarPar)
+
+rendimiento=merge.data.frame(rendimiento,parcela,by.x ="ID.de.la.parcela..clave.for谩nea.",by.y="ID.de.la.parcela..clave.primaria.",all.x=TRUE) 
 
 
 #Kilogramos a toneladas
 
-rendimiento=mutate(rendimiento,Rendimiento.real..unidad.ha.=ifelse(!is.na(Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido) & Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido=="KILOGRAMO/HA",Rendimiento.real..unidad.ha./1000,Rendimiento.real..unidad.ha.))
+rendimiento=mutate(rendimiento,Rendimiento.real..unidad.ha.=ifelse(!is.na(Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido) & Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido=="KILOGRAMO/HA",Rendimiento.real..unidad.ha./1000,Rendimiento.real..unidad.ha.))
 
-rendimiento=mutate(rendimiento,Precio.de.venta.del.producto.de.inter閟.econ髆ico.obtenido=ifelse(!is.na(Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido) & Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido=="KILOGRAMO/HA",NA,Precio.de.venta.del.producto.de.inter閟.econ髆ico.obtenido))
+rendimiento=mutate(rendimiento,Precio.de.venta.del.producto.de.inter茅s.econ贸mico.obtenido=ifelse(!is.na(Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido) & Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido=="KILOGRAMO/HA",NA,Precio.de.venta.del.producto.de.inter茅s.econ贸mico.obtenido))
 
-rendimiento=mutate(rendimiento,Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido=ifelse(!is.na(Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido) & Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido=="KILOGRAMO/HA","TONELADA/HA",Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido))
-
+rendimiento=mutate(rendimiento,Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido=ifelse(!is.na(Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido) & Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido=="KILOGRAMO/HA","TONELADA/HA",Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido))
 
 #Observaciones por encima de record
 
@@ -368,8 +396,8 @@ rend_up=rep(0,dim(rendimiento)[1])
 
 for (i in 1:dim(rendimiento)[1]){
   for (j in 1:5){
-    if (!is.na(rendimiento$Nombre.del.cultivo.cosechado[i]) & !is.na(rendimiento$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]) & !is.na(rendimiento$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i])){
-      if (rendimiento$Nombre.del.cultivo.cosechado[i]==cultivos[j] & rendimiento$Nombre.del.producto.de.inter閟.econ髆ico.obtenido[i]=="GRANO" & rendimiento$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter閟.econ髆ico.obtenido[i]=="TONELADA/HA"){
+    if (!is.na(rendimiento$Nombre.del.cultivo.cosechado[i]) & !is.na(rendimiento$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]) & !is.na(rendimiento$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i])){
+      if (rendimiento$Nombre.del.cultivo.cosechado[i]==cultivos[j] & rendimiento$Nombre.del.producto.de.inter茅s.econ贸mico.obtenido[i]=="GRANO" & rendimiento$Unidad.de.medida.de.rendimiento.para.el.producto.de.inter茅s.econ贸mico.obtenido[i]=="TONELADA/HA"){
         if (rendimiento$Rendimiento.real..unidad.ha.[i] > records[j]) rend_up[i]=1 
       }
     }
@@ -377,4 +405,6 @@ for (i in 1:dim(rendimiento)[1]){
 }
 
 rendimiento=cbind(rendimiento,rend_up)
+
+
 
